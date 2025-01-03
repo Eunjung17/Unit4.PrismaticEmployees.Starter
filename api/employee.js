@@ -50,7 +50,7 @@ router.get("/employees/:id", async (req, res) => {
       if (result) {
         res.status(200).json(result);
       } else {
-        res.status(200).send("Employee not found");
+        res.status(404).send("Employee not found");
       }
     } catch (error) {
       res.status(400).send(error);
@@ -73,7 +73,7 @@ router.put("/employees/:id", async (req, res) => {
     if (result) {
       res.status(200).json(result);
     } else {
-      res.status(200).send("Employee not found");
+      res.status(404).send("Employee not found");
     }
   } catch (error) {
     res.status(400).send(error);
@@ -103,7 +103,7 @@ router.delete("/employees/:id", async (req, res) => {
           if (deleteEmployee) {
           res.status(200).json(deleteEmployee);
           } else {
-          res.status(200).send("Employee not deleted");
+          res.status(404).send("Employee not deleted");
           }
       } catch (error) {
           res.status(400).send(error);
